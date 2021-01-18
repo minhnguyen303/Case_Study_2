@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 
-use src\Controller\PageController;
+use Src\Controller\PageController;
 
 $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : null;
 

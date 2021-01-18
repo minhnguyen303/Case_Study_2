@@ -1,3 +1,9 @@
+<?php
+if (!empty($userID)) {
+    echo $userID;
+    echo "<br><p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>";
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,80 +11,184 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Texturina:wght@500&display=swap" rel="stylesheet">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
     <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">-->
-
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
     <title>Tài khoản</title>
 </head>
 <body style="font-family: 'Texturina', serif;">
 <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;font-size: 20px">
-        <a class="navbar-brand" href="index.php">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Danh sách máy chủ
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Tất cả máy chủ</a>
-                        <div class="dropdown-divider"></div>
-                        <h5 class="dropdown-header"><u>Game Play</u></h5>
-                        <a class="dropdown-item" href="#">Survival</a>
-                        <a class="dropdown-item" href="#">RPG</a>
-                        <a class="dropdown-item" href="#">SkyBlock</a>
-                        <h5 class="dropdown-header"><u>Mini game</u></h5>
-                        <a class="dropdown-item" href="#">BedWar</a>
-                        <a class="dropdown-item" href="#">SkyWar</a>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-3" href="index.php"><span class="text-success">M</span><span class="text-secondary">I</span><span class="text-danger">L</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarHeader">
+                <div class="col fs-5">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item dropdown ms-3">
+                            <a class="nav-link dropdown-toggle" href="#" id="serverList" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Danh sách máy chủ
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="serverList">
+                                <li><a class="dropdown-item" href="#">Tất cả máy chủ</a></li>
+                                <li><div class="dropdown-divider"></div></li>
+                                <li><p class="dropdown-header"><u class="fs-5">Game Play</u></p></li>
+                                <li><a class="dropdown-item" href="#">Survival</a></li>
+                                <li><a class="dropdown-item" href="#">RPG</a></li>
+                                <li><a class="dropdown-item" href="#">SkyBlock</a></li>
+                                <li><p class="dropdown-header fs-5"><u>Mini game</u></p></li>
+                                <li><a class="dropdown-item" href="#">BedWar</a></li>
+                                <li><a class="dropdown-item" href="#">SkyWar</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="index.php?page=download">Download</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="index.php?page=tutorial">Hướng dẫn</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link active" href="index.php?page=account">Tài khoản</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="index.php?page=shop">Cửa hàng</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto fs-5">
+                    <div class="dropdown">
+                        <a type="button" class="nav-link text-secondary dropdown-toggle" id="mxhDropdown" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                            Mạng xã hội
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="mxhDropdown">
+                            <li><a class="dropdown-item text-primary" href="https://www.facebook.com"><i class="fa fa-facebook-official" aria-hidden="true"></i>&nbsp; Facebook Page</a></li>
+                            <li><a class="dropdown-item text-primary" href="https://www.facebook.com"><i class="fa fa-facebook-official" aria-hidden="true"></i>&nbsp; Facebook Group</a></li>
+                            <li><a class="dropdown-item text-danger" href="https://www.youtube.com"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp; YouTube</a></li>
+                            <li><a class="dropdown-item" href="https://www.instagram.com" style="color: #c74ac1"><i class="fa fa-instagram" aria-hidden="true"></i>&nbsp; Instagram</a></li>
+                        </ul>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=download">Download</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=tutorial">Hướng dẫn</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php?page=admin">Tài khoản</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php?page=shop">Cửa hàng</a>
-                </li>
-            </ul>
-            <div class="dropdown">
-                <a type="button" class="nav-link text-light dropdown-toggle" data-toggle="dropdown">
-                    Mạng xã hội
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="https://www.facebook.com"><i class="fa fa-facebook-official" aria-hidden="true"></i>&nbsp; Facebook Page</a>
-                    <a class="dropdown-item" href="https://www.facebook.com"><i class="fa fa-facebook-official" aria-hidden="true"></i>&nbsp; Facebook Group</a>
-                    <a class="dropdown-item" href="https://www.youtube.com"><i class="fa fa-youtube" aria-hidden="true"></i>&nbsp; YouTube</a>
-                    <a class="dropdown-item" href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i>&nbsp; Instagram</a>
                 </div>
             </div>
         </div>
     </nav>
 </header>
-<div class="container" role="main" style="padding: 80px 15px 0">
+<div class="container" role="main" style="padding: 100px 15px 0">
+
+    <div class="row justify-content-md-center">
+        <div class="col-4 p-0 rounded">
+            <ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="pills-login-tab" data-bs-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Đăng nhập</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="pills-register-tab" data-bs-toggle="pill" href="#pills-register" role="tab" aria-controls="pills-register" aria-selected="false">Đăng ký</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active text-center" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+                    <form action="" method="post">
+                        <input type="text" name="action" value="login" hidden>
+                        <!--<h1 class="h3 mb-3 fw-normal">Please sign in</h1>-->
+                        <div class="form-floating mb-3">
+                            <input type="text" id="inputUser" class="form-control" placeholder="User name" required=""
+                                   autofocus="">
+                            <label for="inputUser">User name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                                   required="">
+                            <label for="inputPassword">Password</label>
+                        </div>
+                        <div class="checkbox mb-3 mt-3">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Đăng nhập</button>
+                        <p class="mt-4 mb-3 text-muted">© 2021-2021</p>
+                    </form>
+                </div>
+                <div class="tab-pane fade text-center" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
+                    <form action="" method="post" class="needs-validation">
+                        <!--<h1 class="h3 mb-3 fw-normal">Please sign in</h1>-->
+                        <input type="text" name="action" value="register" hidden>
+                        <div class="form-floating mb-3">
+                            <input type="text" id="inputUser" class="form-control" placeholder="User name" required autofocus="">
+                            <label for="inputUser">User name</label>
+                            <div class="valid-feedback">l</div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                            <label for="inputPassword">Password</label>
+                            <div class="valid-feedback"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="password" id="inputPassword2" class="form-control" placeholder="Password Again" required>
+                            <label for="inputPassword2">Password Again</label>
+                            <div class="valid-feedback"></div>
+                        </div>
+                        <div class="checkbox mb-3 mt-3">
+                            <label>
+                                <input type="checkbox" value="remember-me" required> Tôi đã đọc và đồng ý với
+                                <a href="index?page=something">điều khoản người dùng</a>
+                            </label>
+                            <div class="valid-feedback"></div>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Đăng ký</button>
+                        <p class="mt-4 mb-3 text-muted">© 2021-2021</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<nav class="d-flex justify-content-center pb-3 row">
+        <div class="nav nav-tabs justify-content-md-center border col-8" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link ps-5 pe-5 col-3 active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab"
+               aria-controls="nav-login" aria-selected="true">Đăng nhập</a>
+            <a class="nav-item nav-link ps-auto col-3" id="nav-register-tab" data-toggle="tab" href="#nav-register" role="tab"
+               aria-controls="nav-register" aria-selected="false">Đăng ký</a>
+        </div>
+    </nav>
+
+    <div class="tab-content d-flex justify-content-center" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+            <form class="bo">
+                <div class="d-inline-flex flex-column p-2 bd-highlight">
+                    <div class="form-group row">
+                        <label for="inputLoginUser" class="col-form-label">User Name:</label>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputLoginPassword">Password:</label>
+                    </div>
+                </div>
+                <div class="d-inline-flex flex-column p-2 bd-highlight">
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputLoginUser" placeholder="User name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputLoginPassword" placeholder="Password">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
+
+        </div>
+    </div>-->
 
 </div>
 <footer>

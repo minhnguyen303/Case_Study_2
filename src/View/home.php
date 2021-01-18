@@ -9,24 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Texturina:wght@500&display=swap" rel="stylesheet">
 
-    <!-- Latest compiled and minified CSS -->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-    <!-- jQuery library -->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
-
-    <!-- Popper JS -->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>-->
-
-    <!-- Latest compiled JavaScript -->
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
-
     <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
-    <title>Cửa hàng</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>Server MIL</title>
 </head>
 <body style="font-family: 'Texturina', serif;">
 <header>
@@ -65,7 +54,7 @@
                             <a class="nav-link" href="index.php?page=account">Tài khoản</a>
                         </li>
                         <li class="nav-item ms-3">
-                            <a class="nav-link active" href="index.php?page=shop">Cửa hàng</a>
+                            <a class="nav-link" href="index.php?page=shop">Cửa hàng</a>
                         </li>
                     </ul>
                 </div>
@@ -86,34 +75,9 @@
         </div>
     </nav>
 </header>
-<div class="container" role="main" style="padding: 100px 15px 0">
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="messages-tab" data-bs-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="settings-tab" data-bs-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">Settings</a>
-        </li>
-    </ul>
-
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-        <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">...</div>
-        <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">...</div>
-    </div>
+<div class="container" role="main" style="padding: 80px 15px 0">
+    <h1>Chỉnh lại giao diện như hệ điều hành PC với các theme là các hệ điều hành khác nhau!</h1>
 </div>
-<footer>
-
-</footer>
 </body>
 </html>
 <?php
