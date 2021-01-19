@@ -1,7 +1,7 @@
 <?php
-if (!empty($userID)) {
-    echo $userID;
-    echo "<br><p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>";
+$userLogin = null;
+if (!empty($user)){
+    $userLogin = $user;
 }
 ?>
 <!doctype html>
@@ -15,8 +15,10 @@ if (!empty($userID)) {
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Texturina:wght@500&display=swap" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>-->
+    <link rel="stylesheet" href="bootstrap-5.0.0/css/bootstrap.css">
+    <script src="bootstrap-5.0.0/js/bootstrap.js"></script>
 
     <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">-->
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
@@ -82,114 +84,41 @@ if (!empty($userID)) {
     </nav>
 </header>
 <div class="container" role="main" style="padding: 100px 15px 0">
+    <div class="row">
+        <h2>Information</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h5>User name</h5>
+                <span class="text-primary"><?php echo $userLogin['userName'];?></span>
+            </li>
+            <li class="list-group-item">
+                <h5>Password</h5>
+                <span class="text-light"><?php echo $userLogin['password'];?></span>
+            </li>
+            <li class="list-group-item">
+                <h5>Birthday</h5>
+                <span class="text-primary"><?php echo $userLogin['birthday'];?></span>
+            </li>
+            <li class="list-group-item">
+                <h5>Phone</h5>
+                <span class="text-primary">0<?php echo $userLogin['phone'];?></span>
+            </li>
+            <li class="list-group-item">
+                <h5>Email</h5>
+                <span class="text-primary"><?php echo $userLogin['email'];?></span>
+            </li>
+            <li class="list-group-item">
+                <h5>Money</h5>
+                <span class="text-danger"><?php echo $userLogin['money'];?> $</span>
+            </li>
+        </ul>
+    </div>
+    <div class="row">
+        <h2>Inventory</h2>
+        <div class="row">
 
-    <div class="row justify-content-md-center">
-        <div class="col-4 p-0 rounded">
-            <ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="pills-login-tab" data-bs-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Đăng nhập</a>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="pills-register-tab" data-bs-toggle="pill" href="#pills-register" role="tab" aria-controls="pills-register" aria-selected="false">Đăng ký</a>
-                </li>
-            </ul>
-            <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active text-center" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
-                    <form action="" method="post">
-                        <input type="text" name="action" value="login" hidden>
-                        <!--<h1 class="h3 mb-3 fw-normal">Please sign in</h1>-->
-                        <div class="form-floating mb-3">
-                            <input type="text" id="inputUser" class="form-control" placeholder="User name" required=""
-                                   autofocus="">
-                            <label for="inputUser">User name</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Password"
-                                   required="">
-                            <label for="inputPassword">Password</label>
-                        </div>
-                        <div class="checkbox mb-3 mt-3">
-                            <label>
-                                <input type="checkbox" value="remember-me"> Remember me
-                            </label>
-                        </div>
-                        <button class="w-100 btn btn-lg btn-primary" type="submit">Đăng nhập</button>
-                        <p class="mt-4 mb-3 text-muted">© 2021-2021</p>
-                    </form>
-                </div>
-                <div class="tab-pane fade text-center" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
-                    <form action="" method="post" class="needs-validation">
-                        <!--<h1 class="h3 mb-3 fw-normal">Please sign in</h1>-->
-                        <input type="text" name="action" value="register" hidden>
-                        <div class="form-floating mb-3">
-                            <input type="text" id="inputUser" class="form-control" placeholder="User name" required autofocus="">
-                            <label for="inputUser">User name</label>
-                            <div class="valid-feedback">l</div>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                            <label for="inputPassword">Password</label>
-                            <div class="valid-feedback"></div>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" id="inputPassword2" class="form-control" placeholder="Password Again" required>
-                            <label for="inputPassword2">Password Again</label>
-                            <div class="valid-feedback"></div>
-                        </div>
-                        <div class="checkbox mb-3 mt-3">
-                            <label>
-                                <input type="checkbox" value="remember-me" required> Tôi đã đọc và đồng ý với
-                                <a href="index?page=something">điều khoản người dùng</a>
-                            </label>
-                            <div class="valid-feedback"></div>
-                        </div>
-                        <button class="w-100 btn btn-lg btn-primary" type="submit">Đăng ký</button>
-                        <p class="mt-4 mb-3 text-muted">© 2021-2021</p>
-                    </form>
-                </div>
-            </div>
         </div>
     </div>
-
-    <!--<nav class="d-flex justify-content-center pb-3 row">
-        <div class="nav nav-tabs justify-content-md-center border col-8" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link ps-5 pe-5 col-3 active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab"
-               aria-controls="nav-login" aria-selected="true">Đăng nhập</a>
-            <a class="nav-item nav-link ps-auto col-3" id="nav-register-tab" data-toggle="tab" href="#nav-register" role="tab"
-               aria-controls="nav-register" aria-selected="false">Đăng ký</a>
-        </div>
-    </nav>
-
-    <div class="tab-content d-flex justify-content-center" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
-            <form class="bo">
-                <div class="d-inline-flex flex-column p-2 bd-highlight">
-                    <div class="form-group row">
-                        <label for="inputLoginUser" class="col-form-label">User Name:</label>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputLoginPassword">Password:</label>
-                    </div>
-                </div>
-                <div class="d-inline-flex flex-column p-2 bd-highlight">
-                    <div class="form-group row">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputLoginUser" placeholder="User name">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputLoginPassword" placeholder="Password">
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="tab-pane fade" id="nav-register" role="tabpanel" aria-labelledby="nav-register-tab">
-
-        </div>
-    </div>-->
-
 </div>
 <footer>
 
