@@ -71,3 +71,5 @@ if (!empty($_SESSION['registerStatus'])) {
         </script>
     </form>
 </div>
+<?php
+unset($_SESSION['registerStatus']);

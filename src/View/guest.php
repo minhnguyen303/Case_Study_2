@@ -1,4 +1,4 @@
-<?php session_start();?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,7 +13,7 @@
 </head>
 <body style="font-family: 'Texturina', serif;">
 <?php include "src/View/Layout/header.php";?>
-<?php if (isset($_SESSION['user'])):?>
+<?php if (!empty($_SESSION['user'])):?>
 <?php include "src/View/account.php";?>
 <?php else:?>
 <?php

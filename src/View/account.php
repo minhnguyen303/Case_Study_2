@@ -1,5 +1,4 @@
 <?php
-session_start();
 $user = null;
 if (!empty($_SESSION['user'])){
     $user = $_SESSION['user'];

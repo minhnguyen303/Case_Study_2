@@ -1,7 +1,7 @@
 <?php
 $loginStatus = null;
 if (!empty($_SESSION['loginStatus'])) {
-    $logStatus = $_SESSION['loginStatus'];
+    $loginStatus = $_SESSION['loginStatus'];
 }
 ?>
 <div class="container" role="main" style="padding: 90px 15px 0">
@@ -29,11 +29,9 @@ if (!empty($_SESSION['loginStatus'])) {
                     <div class="invalid-feedback">Mật khẩu sai!</div>
                 </div>
 
-                <div class="checkbox mb-3 mt-3 form-check form-switch">
-                    <label class="text-start">
-                        <input type="checkbox" value="remember-me" class="form-check-input">
-                        <label class="text-start ms-2">Tự động đăng nhập</label>
-                    </label>
+                <div class="checkbox mb-3 mt-3 form-check form-switch text-start">
+                    <input type="checkbox" value="true" class="form-check-input" name="remember" id="remember">
+                    <label class="text-start ms-2" for="remember">Tự động đăng nhập</label>
                     <div class="valid-feedback"></div>
                 </div>
                 <button class="w-100 btn btn-lg btn-outline-primary" type="submit">Đăng nhập</button>
@@ -52,3 +50,4 @@ if (!empty($_SESSION['loginStatus'])) {
     </form>
 </div>
 <?php
+unset($_SESSION['loginStatus']);

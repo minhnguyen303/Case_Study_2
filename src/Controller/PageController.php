@@ -24,36 +24,27 @@ class PageController
 
     public function accountPage()
     {
+        session_start();
         $action = "btnLogin";
         if ($_SERVER['REQUEST_METHOD'] == 'GET'){
             include 'src/View/guest.php';
         }
         else{
             $action = $_POST['action'];
-            print_r($action);
-            die();
             $userManager = new UserManager();
 
             if ($action=="login"){
                 $userName = $_POST['userName'];
                 $password = $_POST['password'];
+                $remember = (empty($_POST['remember']) ? "false" : $_POST['remember']);
 
                 $userDB = $userManager->getUser($userName);
                 $userDB = (empty($userDB[0]) ? null : $userDB[0]);
-
-                if ($userDB != ""){
-                    echo $userDB;
-                }
-                else{
-                    print_r("");
-                }
-                die();
-
-                if ($userDB != null){
-                    if ($userDB['userName'] == $password){
-                        $_SESSION['user'] = $userDB;
-                        header("Location: index.php?page=account");
-                        die();
+                if (!empty($userDB)){
+                    if ($userDB['password'] == $password){
+                        if ($remember == "true"){
+                            $_SESSION['user'] = $userDB;
+                        }
                     }
                     else{
                         $_SESSION['loginStatus'] = "WrongPassword";
@@ -73,11 +64,14 @@ class PageController
                 $userDB = (empty($userDB[0]) ? null : $userDB[0]);
 
                 if ($userDB == null){
-                    if (strlen($password) > 8){
+                    if (strlen($password) >= 8){
                         if ($password != $password2){
                             $_SESSION['registerStatus'] = "PasswordNotCorrect";
                         }
-                    }
+                        else{
+                            echo "Đang đăng ký .........................................................................";
+                        }
+                   }
                     else{
                         $_SESSION['registerStatus'] = "PasswordTooShort";
                     }
