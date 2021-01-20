@@ -8,9 +8,9 @@ use PDOException;
 
 class DBConnect
 {
-    protected $dsn;
-    protected $user;
-    protected $password;
+    protected string $dsn;
+    protected string $user;
+    protected string $password;
 
     public function __construct()
     {
@@ -19,7 +19,7 @@ class DBConnect
         $this->password = 'Minh3032001@';
     }
 
-    public function connect()
+    public function connect(): ?PDO
     {
         try {
             return new PDO($this->dsn, $this->user, $this->password);
@@ -29,7 +29,7 @@ class DBConnect
         return null;
     }
 
-    public function query($statement)
+    public function query($statement): array
     {
         $stmt = $this->connect()->query($statement);
         return $stmt->fetchAll();

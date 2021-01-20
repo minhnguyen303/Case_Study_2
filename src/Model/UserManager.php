@@ -6,14 +6,14 @@ namespace Src\Model;
 
 class UserManager
 {
-    protected $dbConnect;
+    protected DBConnect $dbConnect;
 
     public function __construct()
     {
         $this->dbConnect = new DBConnect();
     }
 
-    public function getAllUser()
+    public function getAllUser(): array
     {
         $sql = "SELECT * FROM Users";
         $data = $this->dbConnect->query($sql);
@@ -36,7 +36,7 @@ class UserManager
         $this->dbConnect->execute($sql);
     }
 
-    public function getUser($userName)
+    public function getUser($userName): array
     {
         $sql = "SELECT * FROM Users where userName='$userName'";
         return $this->dbConnect->query($sql);

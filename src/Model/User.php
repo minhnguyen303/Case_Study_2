@@ -11,7 +11,7 @@ class User
     protected $email;
     protected $money;
 
-    public function __construct($userName, $password, $birthday, $phone, $email, $money = 0)
+    public function __construct($userName, $password, $birthday, $phone=0, $email="none@gmai.com", $money = 0)
     {
         $this->userName = $userName;
         $this->password = $password;

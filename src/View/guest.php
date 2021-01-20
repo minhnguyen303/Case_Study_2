@@ -13,23 +13,29 @@
 </head>
 <body style="font-family: 'Texturina', serif;">
 <?php include "src/View/Layout/header.php";?>
-<?php if (!empty($_SESSION['user'])):?>
-<?php include "src/View/account.php";?>
-<?php else:?>
 <?php
-if (!empty($action)){
-    switch ($action){
-        case "btnLogin":
-            include "src/View/login.php";
-            break;
-        case "btnRegister":
-            include "src/View/register.php";
-            break;
-        default:
-            include "src/View/login.php";
+    if (!empty($_SESSION['user'])) {
+        if ($_SESSION['user']['userName'] == "root"){
+            include "src/View/admin.php";
+        }
+        else{
+            include "src/View/account.php";
+        }
     }
-}
-endif;
+    else{
+        if (!empty($action)){
+            switch ($action){
+                case "btnLogin":
+                    include "src/View/login.php";
+                    break;
+                case "btnRegister":
+                    include "src/View/register.php";
+                    break;
+                default:
+                    include "src/View/login.php";
+            }
+        }
+    }
 ?>
 </body>
 </html>

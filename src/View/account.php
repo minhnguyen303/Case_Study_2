@@ -4,23 +4,12 @@ if (!empty($_SESSION['user'])){
     $user = $_SESSION['user'];
 }
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <?php include "src/View/Layout/boostrap.php"?>
-
-    <title>Tài khoản</title>
-</head>
-<body style="font-family: 'Texturina', serif;">
-<?php include "src/View/Layout/header.php"?>
 <div class="container" role="main" style="padding: 90px 15px 0">
     <div class="row">
-        <h2>Information</h2>
+        <div class="pt-2 pb-3 d-flex justify-content-between">
+            <h2 class="">Information</h2>
+            <button type="button" class="btn btn-outline-danger pb-2" onclick="btnLogout()">Logout</button>
+        </div>
         <ul class="list-group">
             <li class="list-group-item">
                 <h5>User name</h5>
@@ -54,10 +43,13 @@ if (!empty($_SESSION['user'])){
 
         </div>
     </div>
+    <form action="" method="post" hidden>
+        <input type="text" name="action" value="logout">
+        <button type="submit" id="btnLogout"></button>
+        <script>
+            function btnLogout() {
+                document.getElementById("btnLogout").click();
+            }
+        </script>
+    </form>
 </div>
-<footer>
-
-</footer>
-</body>
-</html>
-<?php
