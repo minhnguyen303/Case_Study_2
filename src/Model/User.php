@@ -72,7 +72,7 @@ class User
     /**
      * @return mixed
      */
-    public function getPhone()
+    public function getPhone(): int
     {
         return $this->phone;
     }
@@ -88,7 +88,7 @@ class User
     /**
      * @return mixed
      */
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -104,7 +104,7 @@ class User
     /**
      * @return mixed
      */
-    public function getMoney()
+    public function getMoney(): int
     {
         return $this->money;
     }

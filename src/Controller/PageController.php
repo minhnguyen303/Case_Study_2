@@ -41,9 +41,7 @@ class PageController
 
                 if (!empty($userDB)){ // Người dùng tồn tại
                     if ($userDB['password'] == $password){
-                        if ($remember == "true"){
-                            $_SESSION['user'] = $userDB;
-                        }
+                        $_SESSION['user'] = $userDB;
                     }
                     else{ // Mật khẩu sai
                         $_SESSION['loginStatus'] = "WrongPassword";

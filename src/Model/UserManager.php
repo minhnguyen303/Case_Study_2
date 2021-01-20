@@ -24,7 +24,7 @@ class UserManager
         return $users;
     }
 
-    public function addUser($user)
+    public function addUser(User $user)
     {
         $userName = $user->getUserName();
         $password = $user->getPassword();
@@ -42,13 +42,13 @@ class UserManager
         return $this->dbConnect->query($sql);
     }
 
-    public function updateUser($userName, $data)
+    public function updateUser($userName,User $user)
     {
-        $password = $userName->getPassword();
-        $birthday = $userName->getBirthday();
-        $phone = $userName->getPhone();
-        $email = $userName->getEmail();
-        $money = $userName->getMoney();
+        $password = $user->getPassword();
+        $birthday = $user->getBirthday();
+        $phone = $user->getPhone();
+        $email = $user->getEmail();
+        $money = $user->getMoney();
 
         $sql = "UPDATE Users SET password='$password', birthday='$birthday', phone='$phone', email='$email', money='$money' WHERE userName='$userName'";
         $this->dbConnect->execute($sql);

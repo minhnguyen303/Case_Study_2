@@ -53,3 +53,7 @@ if (!empty($_SESSION['user'])){
         </script>
     </form>
 </div>
+<?php
+if (!empty($remember)){
+    unset($_SESSION['user']);
+}

@@ -16,6 +16,7 @@
 <?php
     if (!empty($_SESSION['user'])) {
         if ($_SESSION['user']['userName'] == "root"){
+
             include "src/View/admin.php";
         }
         else{
